@@ -15,7 +15,7 @@
   scale: 1.1;
 }
 
-.logo img {
+.logo__img {
   min-height: 60px;
   max-height: 60px;
 }

@@ -9,7 +9,9 @@ interface HeaderProps {
 export const Header: FC<HeaderProps>  = ({ onClickMenu }) => {
   return (
       <header className={styles.header}>
-          <Link className={styles.logo} to="/"><img src="/shop.svg" alt="Rating product app"/></Link>
+          <Link className={styles.logo} to="/">
+              <img src="/shop.svg" alt="Rating product app" className={styles['logo__img']}/>
+          </Link>
           <h1 className={styles.title}>Rating product app</h1>
           <img src="/menu-icon.svg" alt="Menu" className={styles['menu-button']} onClick={onClickMenu}/>
       </header>
