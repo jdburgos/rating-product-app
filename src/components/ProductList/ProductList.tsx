@@ -1,4 +1,5 @@
 import { Product } from "@/components/Product";
+import styles from "./ProductList.module.css";
 
 export const ProductList = () => {
   const products = [
@@ -65,7 +66,7 @@ export const ProductList = () => {
   ];
 
   return (
-    <div className="product-list">
+    <div className={styles['product-list']}>
       {products.map(product => (
         <Product key={product.id} product={product} />
       ))}

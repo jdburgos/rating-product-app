@@ -1,4 +1,5 @@
 import { Button } from "../Button";
+import styles from './SwiperActions.module.css';
 
 export const SwiperActions = () => {
     const handleLikeClick = () => {
@@ -9,9 +10,9 @@ export const SwiperActions = () => {
     };
 
     return (
-        <div>
-            <Button icon="" onClick={handleLikeClick} altText='Like' type='primary' />
-            <Button icon="" onClick={handleDislikeClick} altText='Dislike' type='secondary' />
+        <div className={styles['swiper-actions']}>
+            <Button icon="/x-icon.svg" onClick={handleDislikeClick} altText='Dislike' type='secondary' />
+            <Button icon="/heart-icon.svg" onClick={handleLikeClick} altText='Like' type='primary' />
         </div>
     )
 }
