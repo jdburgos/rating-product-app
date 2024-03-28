@@ -1,9 +1,12 @@
-import { LikedList } from "@/components/LikedList";
+import { ProductList } from "@/components/ProductList";
+import {IProduct} from "@/interfaces/product.interface.ts";
 
 export const LikedPage = () => {
+  const products: IProduct[] = [];
+
   return (
     <>
-      <LikedList />
+      <ProductList products={products} />
     </>
   );
 }
