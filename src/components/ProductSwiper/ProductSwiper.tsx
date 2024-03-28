@@ -1,6 +1,8 @@
-import { ProductList } from "../ProductList";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperActions } from "../SwiperActions";
+import { Product } from "@/components/Product";
 import styles from './ProductSwiper.module.css';
+import "swiper/css";
 
 export const ProductSwiper = () => {
   const products = [
@@ -68,8 +70,16 @@ export const ProductSwiper = () => {
 
   return (
     <section className={styles['product-swiper']}>
-      <ProductList products={products} />
-      <SwiperActions />
+      <Swiper>
+        {
+          products.map(product => (
+            <SwiperSlide key={product.id + '-swiper'}>
+              <Product key={product.id} product={product} />
+            </SwiperSlide>
+          ))
+        }
+        {products.length ? <SwiperActions currentProduct={products[0]} /> : null}
+      </Swiper>
     </section>
   );
 }

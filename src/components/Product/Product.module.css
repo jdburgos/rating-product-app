@@ -8,11 +8,6 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    transition: 0.3s;
-}
-
-.product:hover {
-    scale: 1.02;
 }
 
 .product__image {

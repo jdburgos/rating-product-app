@@ -11,8 +11,8 @@ export const Sidebar: FC<SidebarProps>  = ({ onClickMenu }) => {
     <aside className={styles.sidebar}>
       <span className={styles['close-icon']} onClick={onClickMenu}>X</span>
       <nav className={styles.navigation}>
-        <Link className={styles['navigation__link']} to="/">Home</Link>
-        <Link className={styles['navigation__link']} to="/liked">Liked</Link>
+        <Link className={styles['navigation__link']} to="/" onClick={onClickMenu}>Home</Link>
+        <Link className={styles['navigation__link']} to="/liked" onClick={onClickMenu}>Liked</Link>
       </nav>
     </aside>
   );

@@ -5,9 +5,10 @@ import { Sidebar } from "@/components/Sidebar";
 import styles from './RootLayout.module.css';
 
 export const RootLayout = () => {
-    const [menuStatus, setMenuStatus] = useState(false);
+  const [menuStatus, setMenuStatus] = useState(false);
+
   const onClickMenu = () => {
-    setMenuStatus(prevState => !prevState)// open the sidebar
+    setMenuStatus(prevState => !prevState)
   };
 
   return (
