@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  flex: 1;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  scale: 1.1;
+}
+
+.logo img {
+  min-height: 60px;
+  max-height: 60px;
+}
+
+.title {
+  flex: 4;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.menu-button {
+  flex: 1;
+  min-height: 60px;
+  max-height: 60px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.menu-button:hover {
+  scale: 1.1;
+}

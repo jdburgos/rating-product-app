@@ -1,13 +1,17 @@
-export const Header = () => {
-  const handleMenuClick = () => {
-    alert('Menu button clicked!');
-  };
+import { FC } from "react";
+import { Link } from "react-router-dom";
+import styles from './Header.module.css';
 
+interface HeaderProps {
+  onClickMenu: () => void;
+}
+
+export const Header: FC<HeaderProps>  = ({ onClickMenu }) => {
   return (
-    <header>
-      <div className="logo">Logo</div>
-      <h1 className="title">Title</h1>
-      <button className="menu-button" onClick={handleMenuClick}>Menu</button>
-    </header>
+      <header className={styles.header}>
+          <Link className={styles.logo} to="/"><img src="/shop.svg" alt="Rating product app"/></Link>
+          <h1 className={styles.title}>Rating product app</h1>
+          <img src="/menu-icon.svg" alt="Menu" className={styles['menu-button']} onClick={onClickMenu}/>
+      </header>
   );
 }
