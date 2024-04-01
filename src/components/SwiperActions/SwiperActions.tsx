@@ -1,19 +1,18 @@
 import { FC } from "react";
 import { Button } from "../Button";
 import { IProduct } from "@/interfaces/product.interface.ts";
+import { useProductContext } from "@/contexts/ProductContext";
 import styles from './SwiperActions.module.css';
-import { useSwiper } from "swiper/react";
 
 interface SwiperActionsProps {
-  currentProduct: IProduct;
+  product: IProduct;
 }
 
-export const SwiperActions: FC<SwiperActionsProps> = ({ currentProduct }) => {
-    const swiper = useSwiper();
+export const SwiperActions: FC<SwiperActionsProps> = ({ product }) => {
+    const { setProducts, likedProducts, setLikedProducts } = useProductContext();
 
     const handleLikeClick = () => {
-      const products = JSON.parse(localStorage.getItem('products') || '[]') || [];
-      const productExists = products.some((prod: IProduct) => prod.id === currentProduct.id);
+      const productExists = likedProducts.some((prod: IProduct) => prod.id === product.id);
 
       if (productExists) {
         alert('This product has already been added to your favorites');
@@ -21,17 +20,12 @@ export const SwiperActions: FC<SwiperActionsProps> = ({ currentProduct }) => {
         return;
       }
 
-      swiper.slideNext()
-      products.push(currentProduct);
-      localStorage.setItem('products', JSON.stringify(products));
+      setLikedProducts(prevProducts => [...prevProducts, product]);
+      setProducts(prevProducts => prevProducts.filter((prod: IProduct) => prod.id !== product.id));
     };
 
     const handleDislikeClick = () => {
-      let products = JSON.parse(localStorage.getItem('products') || '[]') || [];
-
-      swiper.slidePrev()
-      products = products.filter((product: IProduct) => product.id !== currentProduct.id);
-      localStorage.setItem('products', JSON.stringify(products));
+      setProducts(prevProducts => prevProducts.filter((prod: IProduct) => prod.id !== product.id));
     };
 
     return (

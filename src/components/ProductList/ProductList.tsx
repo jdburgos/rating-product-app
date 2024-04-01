@@ -12,7 +12,7 @@ export const ProductList: FC<ProductListProps> = ({ products }) => {
     <div className={styles['product-list']}>
       {products.length ? products.map(product => (
         <Product key={product.id} product={product} />
-      )) : <p className={styles['product-list__text']}>No products found</p>}
+      )) : <p className={styles['product-list__text']}>No products found.</p>}
     </div>
   );
 }
